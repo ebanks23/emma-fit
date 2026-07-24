@@ -1,13 +1,5 @@
-# Emma Fit Pro update
+# Emma Fit — Day 1 Update
 
-Upload and replace:
-- index.html
-- manifest.json
-- sw.js
-- icon.svg
-- .nojekyll
+Upload and replace `index.html`, `manifest.json`, `sw.js`, `icon.svg`, and `.nojekyll` in the root of your GitHub repository. Then open:
 
-Then commit the changes. Open:
-https://ebanks23.github.io/emma-fit/?v=3
-
-The `?v=3` forces the new version to load instead of the old cached copy.
+https://ebanks23.github.io/emma-fit/?v=4

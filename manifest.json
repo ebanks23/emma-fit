@@ -1,16 +1,1 @@
-{
-  "name": "Emma Fit Pro",
-  "short_name": "Emma Fit",
-  "start_url": "./index.html?v=3",
-  "display": "standalone",
-  "background_color": "#f7f3ea",
-  "theme_color": "#173f33",
-  "icons": [
-    {
-      "src": "./icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
-}
+{"name":"Emma Fit Pro","short_name":"Emma Fit","start_url":"./index.html?v=4","display":"standalone","background_color":"#f7f3ea","theme_color":"#163f33","icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
