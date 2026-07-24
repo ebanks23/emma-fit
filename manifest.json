@@ -1,11 +1,10 @@
 {
-  "name": "Emma Fit 2.0",
+  "name": "Emma Fit Pro",
   "short_name": "Emma Fit",
-  "start_url": "./index.html",
+  "start_url": "./index.html?v=3",
   "display": "standalone",
-  "background_color": "#f5f1e8",
-  "theme_color": "#216e55",
-  "description": "Emma personalised nutrition, gym, shopping and progress app.",
+  "background_color": "#f7f3ea",
+  "theme_color": "#173f33",
   "icons": [
     {
       "src": "./icon.svg",

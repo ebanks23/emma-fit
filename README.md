@@ -1,16 +1,13 @@
-# Emma Fit 2.0 update
+# Emma Fit Pro update
 
-Upload these files to the root of the existing `emma-fit` repository and choose **Replace** when GitHub asks:
-
+Upload and replace:
 - index.html
 - manifest.json
 - sw.js
 - icon.svg
 - .nojekyll
 
-Keep GitHub Pages set to `main` and `/(root)`.
+Then commit the changes. Open:
+https://ebanks23.github.io/emma-fit/?v=3
 
-After committing, wait 1–2 minutes and refresh:
-https://ebanks23.github.io/emma-fit/
-
-Version 2 adds a countdown, rest timer, improved app title and data backup/import.
+The `?v=3` forces the new version to load instead of the old cached copy.

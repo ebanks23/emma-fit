@@ -3,126 +3,110 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#216e55">
+<meta name="theme-color" content="#173f33">
 <link rel="manifest" href="./manifest.json">
-<title>Emma Fit 2.0</title>
+<title>Emma Fit Pro</title>
 <style>
-:root{--g:#216e55;--g2:#2e8b68;--bg:#f5f1e8;--card:#fff;--text:#203129;--muted:#687970;--line:#dce6e0;--soft:#e7f2ec;--warn:#fff3d8}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
-header{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;padding:20px 18px 16px;border-radius:0 0 26px 26px;position:sticky;top:0;z-index:5}
-h1{margin:0;font-size:27px}header p{margin:5px 0 0;opacity:.9}main{max-width:760px;margin:auto;padding:14px 14px 100px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;margin:12px 0;box-shadow:0 5px 18px rgba(33,110,85,.06)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#eef7f2;border-radius:14px;padding:12px}.metric b{display:block;font-size:21px;margin-top:3px}
-h2{font-size:20px;margin:0 0 11px}h3{font-size:16px;margin:14px 0 8px}.small{font-size:13px;color:var(--muted);line-height:1.4}
-.row{display:flex;gap:8px}.row>*{flex:1}label{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
-input,select,textarea,button{font:inherit}input,select,textarea{width:100%;border:1px solid #cbd8d1;border-radius:10px;padding:10px;background:#fff}
-button{border:0;border-radius:11px;padding:10px 12px;font-weight:700;cursor:pointer}.primary{background:var(--g);color:#fff}.soft{background:var(--soft);color:var(--g)}.danger{background:#fae7e1;color:#9c3f2d}
-.warn{background:var(--warn)}.item{padding:10px 0;border-top:1px solid #e1e8e4}.item:first-child{border-top:0}.pill{float:right;background:var(--soft);color:var(--g);padding:4px 8px;border-radius:20px;font-size:12px}
-.demo{display:inline-block;margin-top:7px;color:var(--g);font-weight:700;text-decoration:none;font-size:13px}.progress{height:12px;border-radius:20px;background:#e5ebe8;overflow:hidden}.bar{height:100%;background:var(--g);width:0}
-.tabs{display:none}.tabs.active{display:block}nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:7px 3px calc(7px + env(safe-area-inset-bottom));z-index:10}
-nav button{background:#fff;color:var(--muted);font-size:11px;padding:8px 1px}nav button.active{color:var(--g)}
-.checkline{display:flex;gap:9px;align-items:center;padding:8px 0;border-top:1px solid #e5ebe8}.checkline input{width:21px;height:21px;flex:0 0 auto}
-.recipe{background:#f7faf8;border:1px solid var(--line);border-radius:13px;padding:11px;margin:8px 0}.hidden{display:none}
-@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}}
-
-.timer{font-size:34px;font-weight:800;text-align:center}.backup-note{font-size:13px;color:var(--muted);line-height:1.45}.badge{display:inline-block;background:#173f33;color:white;padding:5px 9px;border-radius:99px;font-size:12px;margin-bottom:8px}
+:root{--forest:#173f33;--green:#2f8f68;--mint:#dff3e9;--cream:#f7f3ea;--white:#fff;--ink:#1f2d27;--muted:#6c7c74;--line:#dce7e1;--gold:#f6d98b}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:linear-gradient(135deg,var(--forest),var(--green));color:#fff;padding:24px 18px 36px;border-radius:0 0 34px 34px}
+header h1{font-size:31px;margin:0}header p{margin:7px 0 0;opacity:.9}
+main{max-width:760px;margin:-20px auto 0;padding:0 14px 100px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:16px;margin:12px 0;box-shadow:0 10px 30px rgba(23,63,51,.08)}
+.hero{background:linear-gradient(145deg,#ffffff,#eef8f3)}
+h2{margin:0 0 12px;font-size:21px}h3{margin:12px 0 7px;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.metric{background:var(--mint);border-radius:16px;padding:13px}.metric span{font-size:12px;color:var(--muted)}.metric b{display:block;font-size:22px;margin-top:3px}
+.progress{height:12px;background:#e7eeea;border-radius:99px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,var(--green),#69b78f);width:0}
+.row{display:flex;gap:8px}.row>*{flex:1}label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+input,select,button{font:inherit}input,select{width:100%;padding:11px;border:1px solid #cad8d1;border-radius:12px;background:#fff}
+button{border:0;border-radius:13px;padding:11px 12px;font-weight:750;cursor:pointer}.primary{background:var(--forest);color:#fff}.soft{background:var(--mint);color:var(--forest)}.danger{background:#fae6e0;color:#9e402e}
+.small{font-size:13px;line-height:1.45;color:var(--muted)}.tag{display:inline-block;padding:5px 9px;border-radius:99px;background:var(--gold);color:#5a4715;font-size:12px;font-weight:700}
+.item{padding:11px 0;border-top:1px solid var(--line)}.item:first-child{border-top:0}.pill{float:right;background:var(--mint);color:var(--forest);padding:4px 8px;border-radius:99px;font-size:12px}
+.demo{display:inline-block;margin-top:7px;color:var(--green);font-weight:700;text-decoration:none;font-size:13px}
+.tabs{display:none}.tabs.active{display:block}
+nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:8px 3px calc(8px + env(safe-area-inset-bottom));z-index:10}
+nav button{background:#fff;color:var(--muted);font-size:11px;padding:8px 2px}nav button.active{color:var(--forest)}
+.check{display:flex;align-items:center;gap:9px;padding:8px 0;border-top:1px solid var(--line)}.check input{width:22px;height:22px}
+.warn{background:#fff7df}.meal{background:#f8fbf9;border:1px solid var(--line);border-radius:15px;padding:12px;margin:8px 0}
+@media(min-width:680px){.grid{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
 <body>
-<header><h1>Emma Fit 2.0</h1><p>Your personalised nutrition, gym, shopping and progress app.</p></header>
+<header><h1>Emma Fit Pro</h1><p id="hello">Your complete daily plan.</p></header>
 <main>
-<section id="today" class="tabs active"><div class="badge" id="countdownBadge">97 days</div>
-<div class="card"><h2>Today</h2><div class="grid">
-<div class="metric">Calories<b><span id="calTotal">0</span>/<span id="calTarget">1200</span></b></div>
-<div class="metric">Protein<b><span id="proteinTotal">0</span> g</b></div>
-<div class="metric">Water<b><span id="waterTotal">0</span>/8</b></div>
-<div class="metric">Steps<b id="stepsTotal">0</b></div></div>
-<h3>Calorie progress</h3><div class="progress"><div id="calBar" class="bar"></div></div></div>
-<div class="card warn"><b>Safety note</b><p class="small">The calorie goal is editable. A 1,200-calorie intake can be too low for an active adult doing Zumba, BodyPump, strength work and walking. Use a target agreed with your GP or an accredited practising dietitian.</p></div>
-<div class="card"><h2>Quick log</h2><div class="row"><button class="soft" onclick="addWater()">+ 1 glass water</button><button class="soft" onclick="markWorkout()">✓ Workout done</button></div>
-<div class="row" style="margin-top:10px"><div><label>Steps today</label><input id="stepsInput" type="number" min="0"></div><div><label>Sleep last night</label><input id="sleepInput" type="number" min="0" max="24" step=".25"></div></div>
+<section id="home" class="tabs active">
+<div class="card hero"><span class="tag" id="countdown">Goal countdown</span><h2 style="margin-top:10px">Today at a glance</h2>
+<div class="grid">
+<div class="metric"><span>Calories</span><b><i id="cal">0</i>/<i id="targetText">1200</i></b></div>
+<div class="metric"><span>Protein</span><b><i id="protein">0</i> g</b></div>
+<div class="metric"><span>Water</span><b><i id="water">0</i>/8</b></div>
+<div class="metric"><span>Steps</span><b id="steps">0</b></div>
+</div><h3>Daily progress</h3><div class="progress"><div id="bar" class="bar"></div></div></div>
+
+<div class="card"><h2>Quick check-in</h2><div class="row"><button class="soft" onclick="addWater()">+ Water</button><button class="soft" onclick="workoutDone()">✓ Workout done</button></div>
+<div class="row" style="margin-top:10px"><div><label>Steps</label><input id="stepsIn" type="number"></div><div><label>Sleep (hours)</label><input id="sleepIn" type="number" step=".25"></div></div>
 <button class="primary" style="width:100%;margin-top:10px" onclick="saveDaily()">Save today</button></div>
-<div class="card"><h2>Today’s workout</h2><div id="todayWorkout"></div></div>
+
+<div class="card"><h2>Today’s training</h2><div id="todayWorkout"></div></div>
+<div class="card warn"><b>Nutrition safety</b><p class="small">Your calorie target is editable. Because you train regularly, use a calorie target agreed with your GP or an accredited practising dietitian.</p></div>
 </section>
 
-<section id="meals" class="tabs">
-<div class="card"><h2>Add food or drink</h2><div class="row"><div><label>Item</label><input id="foodName" placeholder="Coffee with milk"></div><div><label>Calories</label><input id="foodCalories" type="number" min="0"></div></div>
-<div class="row" style="margin-top:8px"><div><label>Protein (g)</label><input id="foodProtein" type="number" min="0" step=".1"></div><div><label>Meal</label><select id="mealType"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snack</option><option>Drink</option></select></div></div>
-<button class="primary" style="width:100%;margin-top:10px" onclick="addFood()">Add to today</button></div>
-<div class="card"><h2>Today’s food</h2><div id="foodList"></div><p><b>Total: <span id="mealCalories">0</span> calories · <span id="mealProtein">0</span> g protein</b></p></div>
-<div class="card"><h2>Calorie target</h2><input id="targetInput" type="number" min="1000" max="3000" step="50"><button class="soft" style="width:100%;margin-top:8px" onclick="saveTarget()">Update target</button></div>
+<section id="food" class="tabs">
+<div class="card"><h2>Food diary</h2>
+<div class="row"><div><label>Food or drink</label><input id="foodName" placeholder="Coffee with milk"></div><div><label>Calories</label><input id="foodCal" type="number"></div></div>
+<div class="row" style="margin-top:8px"><div><label>Protein (g)</label><input id="foodPro" type="number" step=".1"></div><div><label>Meal</label><select id="foodType"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snack</option><option>Drink</option></select></div></div>
+<button class="primary" style="width:100%;margin-top:10px" onclick="addFood()">Add</button></div>
+<div class="card"><h2>Today’s entries</h2><div id="foodList"></div></div>
+<div class="card"><h2>Quick-add favourites</h2><div id="favourites"></div></div>
+<div class="card"><h2>Calorie target</h2><input id="targetIn" type="number" min="1000" step="50"><button class="soft" style="width:100%;margin-top:8px" onclick="saveTarget()">Update target</button></div>
 </section>
 
-<section id="planner" class="tabs">
-<div class="card"><h2>Simple meal plan</h2><p class="small">No salmon, tuna, cottage cheese or ricotta. Calories are estimates—check your exact brand and serving.</p>
-<div class="recipe"><b>Breakfast: eggs on toast</b><span class="pill">~300 cal</span><p class="small">2 eggs, 1 slice wholemeal toast, tomato or spinach.</p></div>
-<div class="recipe"><b>Breakfast: Weet-Bix</b><span class="pill">~280 cal</span><p class="small">2 Weet-Bix, 200 mL light milk, small banana.</p></div>
-<div class="recipe"><b>Lunch: chicken salad wrap</b><span class="pill">~400 cal</span><p class="small">Wholemeal wrap, 100 g cooked chicken, salad, light mayonnaise.</p></div>
-<div class="recipe"><b>Lunch: chicken rice bowl</b><span class="pill">~430 cal</span><p class="small">100 g chicken, ½–¾ cup cooked rice, frozen vegetables, soy sauce.</p></div>
-<div class="recipe"><b>Dinner: lean beef tacos</b><span class="pill">~500 cal</span><p class="small">Lean mince, 2 small tortillas, salad, salsa and a little cheese.</p></div>
-<div class="recipe"><b>Dinner: chicken stir-fry</b><span class="pill">~500 cal</span><p class="small">Chicken breast, mixed vegetables, rice and reduced-salt sauce.</p></div>
-<div class="recipe"><b>Snack ideas</b><span class="pill">80–180 cal</span><p class="small">Fruit, Yoplait tub, 20 g popcorn, boiled egg, or two plain rice cakes.</p></div>
-</div>
-<div class="card"><h2>Weekly shopping list</h2><p class="small">Suitable for Woolworths, Coles or Aldi.</p><div id="shoppingList"></div>
-<button class="danger" style="width:100%;margin-top:8px" onclick="resetShopping()">Reset ticks</button></div>
+<section id="plan" class="tabs">
+<div class="card"><h2>7-day meal plan</h2><p class="small">No salmon, tuna, cottage cheese or ricotta.</p><div id="mealPlan"></div></div>
 </section>
 
-<section id="gym" class="tabs"><div class="card"><h2>Gym plan</h2><select id="daySelect" onchange="renderGym()"><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option></select><div id="gymPlan"></div></div><div class="card"><h2>Rest timer</h2><div id="restTimer" class="timer">01:00</div><div class="row"><button class="soft" onclick="startRest(60)">60 sec</button><button class="soft" onclick="startRest(90)">90 sec</button><button class="danger" onclick="stopRest()">Stop</button></div></div></section>
+<section id="gym" class="tabs">
+<div class="card"><h2>Gym program</h2><select id="daySelect" onchange="renderGym()"><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option></select><div id="gymPlan"></div></div>
+</section>
 
-<section id="progress" class="tabs">
-<div class="card"><h2>Weight and habits</h2><div class="row"><div><label>Weight (kg)</label><input id="weightInput" type="number" step=".1"></div><div><label>Date</label><input id="weightDate" type="date"></div></div><button class="primary" style="width:100%;margin-top:8px" onclick="saveWeight()">Save weigh-in</button></div>
-<div class="card"><h2>Recent weigh-ins</h2><div id="weightList"></div></div>
-<div class="card"><h2>Today’s habits</h2><p>Sleep: <b><span id="sleepTotal">0</span> hours</b></p><p>Workout: <b id="workoutStatus">Not logged</b></p></div>
-<div class="card"><h2>Backup your data</h2><p class="backup-note">Your entries are saved only in this browser. Export a backup before clearing browser data or changing phones.</p><div class="row"><button class="soft" onclick="exportBackup()">Export backup</button><label class="soft" style="text-align:center;padding:11px;border-radius:12px;font-weight:700;cursor:pointer">Import backup<input id="backupFile" type="file" accept=".json" style="display:none" onchange="importBackup(event)"></label></div></div></section>
+<section id="more" class="tabs">
+<div class="card"><h2>Shopping list</h2><div id="shopping"></div><button class="danger" style="width:100%;margin-top:8px" onclick="resetShop()">Reset list</button></div>
+<div class="card"><h2>Progress</h2><div class="row"><input id="weight" type="number" step=".1" placeholder="Weight kg"><input id="date" type="date"></div><button class="primary" style="width:100%;margin-top:8px" onclick="saveWeight()">Save weigh-in</button><div id="weights"></div></div>
+</section>
 </main>
 
 <nav>
-<button class="active" data-id="today">Today</button><button data-id="meals">Meals</button><button data-id="planner">Plan</button><button data-id="gym">Gym</button><button data-id="progress">Progress</button>
+<button class="active" data-tab="home">Home</button><button data-tab="food">Food</button><button data-tab="plan">Meals</button><button data-tab="gym">Gym</button><button data-tab="more">More</button>
 </nav>
+
 <script>
-const plans={
-Monday:{note:"Zumba first, then only 20 minutes of upper-body strength.",items:[["Zumba","45–60 min","Class"],["Assisted Pull-Up Machine","3 × 8–10","40–50 kg assistance"],["Chest Press","3 × 10","15 kg"],["Seated Row","3 × 10","20 kg"],["Dumbbell Shoulder Press","2 × 10","4 kg each"]]},
-Tuesday:{note:"Upper body + SkiErg. About 60 minutes.",items:[["SkiErg","6 min","Easy–moderate"],["Lat Pulldown","3 × 10","20 kg"],["Chest Press","3 × 10","15 kg"],["Seated Row","3 × 10","20 kg"],["Shoulder Press Machine","3 × 10","10 kg"],["Triceps Pushdown","3 × 12","10 kg"],["Hammer Curl","3 × 12","4 kg each"],["Treadmill","8 min","Comfortable pace"]]},
-Wednesday:{note:"Full body + fan bike intervals. About 60 minutes.",items:[["Treadmill","5 min","Easy"],["Fan Bike","4 rounds","30 sec hard / 90 sec easy"],["Leg Press","3 × 12","40 kg"],["Hip Thrust Machine","3 × 12","10 kg"],["Goblet Squat","3 × 10","6–8 kg"],["Reverse Lunge","2 × 8 each leg","Bodyweight"],["Dumbbell Romanian Deadlift","3 × 10","5–8 kg each"],["Farmer Carry","3 × 30 sec","6–10 kg each"]]},
-Thursday:{note:"Lower body + StairMaster. About 60 minutes.",items:[["StairMaster","6–8 min","Low level"],["Smith Machine Squat","3 × 10","Empty machine or very light"],["Hip Thrust Machine","3 × 12","10 kg"],["Leg Curl","3 × 12","20 kg"],["Leg Extension","3 × 12","20 kg"],["Walking or Reverse Lunges","2 × 8 each leg","Bodyweight or 3–5 kg"],["Standing Calf Raise","3 × 15","Bodyweight"],["Rowing Machine","5 min","Steady"]]},
-Friday:{note:"Optional recovery.",items:[["Walking","20–30 min","Easy pace"]]},Saturday:{note:"Optional family activity.",items:[["Walking","20–30 min","Easy pace"]]},Sunday:{note:"Rest day.",items:[["Rest","—","Normal daily movement"]]}};
+const workouts={
+Monday:{note:"Zumba, then a focused 20-minute upper-body session.",items:[["Zumba","45–60 min","Class"],["Assisted Pull-Up Machine","3 × 8–10","40–50 kg assistance"],["Chest Press","3 × 10","15 kg"],["Seated Row","3 × 10","20 kg"],["Dumbbell Shoulder Press","2 × 10","4 kg each"]]},
+Tuesday:{note:"Upper body + SkiErg.",items:[["SkiErg","6 min","Easy–moderate"],["Lat Pulldown","3 × 10","20 kg"],["Chest Press","3 × 10","15 kg"],["Seated Row","3 × 10","20 kg"],["Shoulder Press","3 × 10","10 kg"],["Triceps Pushdown","3 × 12","10 kg"],["Hammer Curl","3 × 12","4 kg each"],["Treadmill","8 min","Comfortable"]]},
+Wednesday:{note:"Full body + fan bike.",items:[["Treadmill","5 min","Easy"],["Fan Bike","4 rounds","30 sec hard / 90 sec easy"],["Leg Press","3 × 12","40 kg"],["Hip Thrust","3 × 12","10 kg"],["Goblet Squat","3 × 10","6–8 kg"],["Reverse Lunge","2 × 8 each","Bodyweight"],["Dumbbell RDL","3 × 10","5–8 kg each"],["Farmer Carry","3 × 30 sec","6–10 kg each"]]},
+Thursday:{note:"Lower body + StairMaster.",items:[["StairMaster","6–8 min","Low level"],["Smith Squat","3 × 10","Empty/light"],["Hip Thrust","3 × 12","10 kg"],["Leg Curl","3 × 12","20 kg"],["Leg Extension","3 × 12","20 kg"],["Walking or Reverse Lunge","2 × 8 each","Bodyweight or 3–5 kg"],["Calf Raise","3 × 15","Bodyweight"],["Row","5 min","Steady"]]},
+Friday:{note:"Recovery.",items:[["Walking","20–30 min","Easy"]]},Saturday:{note:"Optional family movement.",items:[["Walking","20–30 min","Easy"]]},Sunday:{note:"Rest.",items:[["Rest","—","Normal movement"]]}
+};
+const favs=[["Coffee + 30 mL full-cream milk",19,1,"Drink"],["Yoplait vanilla 100 g",110,4,"Snack"],["Sweet & salty popcorn 20 g",98,2,"Snack"],["2 eggs + toast",300,18,"Breakfast"],["Chicken salad wrap",400,32,"Lunch"],["Chicken rice bowl",430,35,"Lunch"]];
+const meals={Monday:["Eggs on toast","Chicken salad wrap","Chicken stir-fry"],Tuesday:["Weet-Bix + banana","Chicken rice bowl","Lean beef tacos"],Wednesday:["Eggs on toast","Leftover taco bowl","Chicken schnitzel + veg"],Thursday:["Weet-Bix + banana","Chicken wrap","Lean beef bolognese"],Friday:["Eggs on toast","Chicken rice bowl","Homemade burgers + salad"],Saturday:["Weet-Bix + banana","Ham salad sandwich","Roast chicken + veg"],Sunday:["Eggs on toast","Leftovers","Slow-cooker beef + veg"]};
+const shop=["Chicken breast","Lean beef mince","Lean beef strips","Eggs","Lean ham","Light milk","Yoplait yoghurt","Light cheese","Wholemeal bread","Wholemeal wraps","Weet-Bix","Rice","Potatoes","Pasta","Frozen vegetables","Salad mix","Tomatoes","Cucumber","Capsicum","Carrots","Spinach","Apples","Bananas","Oranges","Popcorn packs","Rice cakes","Light mayonnaise","Salsa","Soy sauce","Pasta sauce","Olive oil spray"];
 
-const shop=["Chicken breast or trimmed thigh","5-star lean beef mince","Eggs","Lean ham","Light milk","Yoplait yoghurt tubs","Light tasty cheese","Wholemeal bread","Wholemeal wraps","Weet-Bix","Rice","Potatoes","Frozen mixed vegetables","Lettuce or salad mix","Tomatoes","Cucumber","Capsicum","Carrots","Apples","Bananas","Oranges","20 g popcorn packs","Rice cakes","Light mayonnaise","Salsa","Reduced-salt soy sauce","Olive oil spray"];
-
-let state=JSON.parse(localStorage.getItem("emmafitpro")||"{}");
-state.target=state.target||1200;state.food=state.food||{};state.daily=state.daily||{};state.weights=state.weights||[];state.shop=state.shop||{};
-const key=new Date().toISOString().slice(0,10),todayName=new Date().toLocaleDateString("en-AU",{weekday:"long"});
-state.food[key]=state.food[key]||[];state.daily[key]=state.daily[key]||{water:0,steps:0,sleep:0,workout:false};
-
-function save(){localStorage.setItem("emmafitpro",JSON.stringify(state));render()}
-document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tabs").forEach(x=>x.classList.toggle("active",x.id===b.dataset.id));document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("active",x===b))});
-function addWater(){state.daily[key].water++;save()}function markWorkout(){state.daily[key].workout=true;save()}
-function saveDaily(){state.daily[key].steps=+stepsInput.value||0;state.daily[key].sleep=+sleepInput.value||0;save()}
-function addFood(){if(!foodName.value||!+foodCalories.value)return alert("Add an item and calories.");state.food[key].push({name:foodName.value,kcal:+foodCalories.value,protein:+foodProtein.value||0,type:mealType.value});foodName.value=foodCalories.value=foodProtein.value="";save()}
-function removeFood(i){state.food[key].splice(i,1);save()}function saveTarget(){state.target=+targetInput.value||1200;save()}
-function saveWeight(){if(!+weightInput.value)return alert("Enter your weight.");state.weights.push({date:weightDate.value||key,w:+weightInput.value});state.weights.sort((a,b)=>b.date.localeCompare(a.date));save()}
+let s=JSON.parse(localStorage.getItem("emmafitpro3")||localStorage.getItem("emmafitv2")||localStorage.getItem("emmafitpro")||"{}");
+s.target=s.target||1200;s.food=s.food||{};s.daily=s.daily||{};s.shop=s.shop||{};s.weights=s.weights||[];s.checked=s.checked||{};
+const key=new Date().toISOString().slice(0,10),todayName=new Date().toLocaleDateString("en-AU",{weekday:"long"});s.food[key]=s.food[key]||[];s.daily[key]=s.daily[key]||{water:0,steps:0,sleep:0,workout:false};
+function save(){localStorage.setItem("emmafitpro3",JSON.stringify(s));render()}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tabs").forEach(x=>x.classList.toggle("active",x.id===b.dataset.tab));document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("active",x===b));scrollTo(0,0)});
+function addWater(){s.daily[key].water++;save()}function workoutDone(){s.daily[key].workout=true;save()}
+function saveDaily(){s.daily[key].steps=+stepsIn.value||0;s.daily[key].sleep=+sleepIn.value||0;save()}
+function addFood(){if(!foodName.value||!+foodCal.value)return alert("Add an item and calories.");s.food[key].push({name:foodName.value,kcal:+foodCal.value,protein:+foodPro.value||0,type:foodType.value});foodName.value=foodCal.value=foodPro.value="";save()}
+function addFav(i){let x=favs[i];s.food[key].push({name:x[0],kcal:x[1],protein:x[2],type:x[3]});save()}function delFood(i){s.food[key].splice(i,1);save()}
+function saveTarget(){s.target=+targetIn.value||1200;save()}function toggleShop(i){s.shop[i]=!s.shop[i];save()}function resetShop(){s.shop={};save()}
+function saveWeight(){if(!+weight.value)return;s.weights.push({date:date.value||key,weight:+weight.value});s.weights.sort((a,b)=>b.date.localeCompare(a.date));save()}
 function video(n){return"https://www.youtube.com/results?search_query="+encodeURIComponent(n+" correct technique Technogym")}
-function workoutHTML(day){let p=plans[day];return`<p class="small">${p.note}</p>`+p.items.map(x=>`<div class="item"><b>${x[0]}</b><span class="pill">${x[1]}</span><div class="small">Starting level: ${x[2]}</div><a class="demo" href="${video(x[0])}" target="_blank" rel="noopener">Watch demo videos →</a></div>`).join("")}
+function workoutHTML(day){let p=workouts[day];return`<p class="small">${p.note}</p>`+p.items.map((x,i)=>`<div class="item"><b>${x[0]}</b><span class="pill">${x[1]}</span><div class="small">Start: ${x[2]}</div><a class="demo" target="_blank" href="${video(x[0])}">Watch demo →</a></div>`).join("")}
 function renderGym(){gymPlan.innerHTML=workoutHTML(daySelect.value)}
-function toggleShop(i){state.shop[i]=!state.shop[i];save()}function resetShopping(){state.shop={};save()}
-function render(){
-let f=state.food[key],c=f.reduce((a,x)=>a+x.kcal,0),p=f.reduce((a,x)=>a+x.protein,0);
-calTotal.textContent=mealCalories.textContent=c;proteinTotal.textContent=mealProtein.textContent=p.toFixed(1);calTarget.textContent=state.target;targetInput.value=state.target;calBar.style.width=Math.min(100,c/state.target*100)+"%";
-waterTotal.textContent=state.daily[key].water;stepsTotal.textContent=(state.daily[key].steps||0).toLocaleString();sleepTotal.textContent=state.daily[key].sleep||0;workoutStatus.textContent=state.daily[key].workout?"Completed":"Not logged";stepsInput.value=state.daily[key].steps||"";sleepInput.value=state.daily[key].sleep||"";
-foodList.innerHTML=f.length?f.map((x,i)=>`<div class="item"><b>${x.name}</b><span class="pill">${x.kcal} cal</span><div class="small">${x.type} · ${x.protein} g protein</div><button class="danger" onclick="removeFood(${i})">Remove</button></div>`).join(""):"<p class='small'>Nothing logged yet.</p>";
-todayWorkout.innerHTML=workoutHTML(todayName in plans?todayName:"Monday");
-weightList.innerHTML=state.weights.length?state.weights.slice(0,10).map(x=>`<div class="item">${x.date}<span class="pill">${x.w.toFixed(1)} kg</span></div>`).join(""):"<p class='small'>No weigh-ins yet.</p>";
-shoppingList.innerHTML=shop.map((x,i)=>`<label class="checkline"><input type="checkbox" ${state.shop[i]?"checked":""} onchange="toggleShop(${i})"><span>${x}</span></label>`).join("");
-}
-daySelect.value=todayName in plans?todayName:"Monday";weightDate.value=key;renderGym();render();
-
-let restHandle=null,restSeconds=60;
-function drawRest(){let m=Math.floor(restSeconds/60),ss=restSeconds%60;restTimer.textContent=String(m).padStart(2,"0")+":"+String(ss).padStart(2,"0")}
-function startRest(sec){stopRest();restSeconds=sec;drawRest();restHandle=setInterval(()=>{restSeconds--;drawRest();if(restSeconds<=0){stopRest();alert("Rest finished.")}},1000)}
-function stopRest(){if(restHandle)clearInterval(restHandle);restHandle=null}
-function exportBackup(){const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="emma-fit-backup.json";a.click();URL.revokeObjectURL(a.href)}
-function importBackup(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{state=JSON.parse(r.result);save()}catch(err){alert("That backup file could not be read.")}};r.readAsText(f)}
-const goalDate=new Date("2026-10-17T00:00:00");const daysLeft=Math.max(0,Math.ceil((goalDate-new Date())/86400000));document.getElementById("countdownBadge").textContent=daysLeft+" days to 17 October";
+function render(){let f=s.food[key],c=f.reduce((a,x)=>a+(x.kcal||0),0),p=f.reduce((a,x)=>a+(x.protein||0),0);cal.textContent=c;protein.textContent=p.toFixed(1);targetText.textContent=s.target;targetIn.value=s.target;water.textContent=s.daily[key].water||0;steps.textContent=(s.daily[key].steps||0).toLocaleString();bar.style.width=Math.min(100,c/s.target*100)+"%";stepsIn.value=s.daily[key].steps||"";sleepIn.value=s.daily[key].sleep||"";todayWorkout.innerHTML=workoutHTML(todayName in workouts?todayName:"Monday");foodList.innerHTML=f.length?f.map((x,i)=>`<div class="item"><b>${x.name}</b><span class="pill">${x.kcal} cal</span><div class="small">${x.type} · ${x.protein||0} g protein</div><button class="danger" onclick="delFood(${i})">Remove</button></div>`).join(""):"<p class='small'>Nothing logged yet.</p>";favourites.innerHTML=favs.map((x,i)=>`<div class="meal"><b>${x[0]}</b><span class="pill">${x[1]} cal</span><p class="small">${x[2]} g protein · ${x[3]}</p><button class="soft" onclick="addFav(${i})">Add to today</button></div>`).join("");mealPlan.innerHTML=Object.entries(meals).map(([d,m])=>`<div class="meal"><b>${d}</b><p class="small">Breakfast: ${m[0]}<br>Lunch: ${m[1]}<br>Dinner: ${m[2]}</p></div>`).join("");shopping.innerHTML=shop.map((x,i)=>`<label class="check"><input type="checkbox" ${s.shop[i]?"checked":""} onchange="toggleShop(${i})"><span>${x}</span></label>`).join("");weights.innerHTML=s.weights.length?s.weights.slice(0,10).map(x=>`<div class="item">${x.date}<span class="pill">${x.weight||x.w} kg</span></div>`).join(""):"<p class='small'>No weigh-ins yet.</p>"}
+let h=new Date().getHours();hello.textContent=(h<12?"Good morning, Emma.":h<18?"Good afternoon, Emma.":"Good evening, Emma.")+" Your complete daily plan.";let goal=new Date("2026-10-17T00:00:00"),days=Math.max(0,Math.ceil((goal-new Date())/86400000));countdown.textContent=days+" days to goal";daySelect.value=todayName in workouts?todayName:"Monday";date.value=key;renderGym();render();
 if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js").catch(()=>{});
 </script>
 </body></html>
