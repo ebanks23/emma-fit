@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#216e55">
 <link rel="manifest" href="./manifest.json">
-<title>Emma Fit 2.0</title>
+<title>Emma Fit</title>
 <style>
 :root{--g:#216e55;--g2:#2e8b68;--bg:#f5f1e8;--card:#fff;--text:#203129;--muted:#687970;--line:#dce6e0;--soft:#e7f2ec;--warn:#fff3d8}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
@@ -24,14 +24,12 @@ nav button{background:#fff;color:var(--muted);font-size:11px;padding:8px 1px}nav
 .checkline{display:flex;gap:9px;align-items:center;padding:8px 0;border-top:1px solid #e5ebe8}.checkline input{width:21px;height:21px;flex:0 0 auto}
 .recipe{background:#f7faf8;border:1px solid var(--line);border-radius:13px;padding:11px;margin:8px 0}.hidden{display:none}
 @media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}}
-
-.timer{font-size:34px;font-weight:800;text-align:center}.backup-note{font-size:13px;color:var(--muted);line-height:1.45}.badge{display:inline-block;background:#173f33;color:white;padding:5px 9px;border-radius:99px;font-size:12px;margin-bottom:8px}
 </style>
 </head>
 <body>
-<header><h1>Emma Fit 2.0</h1><p>Your personalised nutrition, gym, shopping and progress app.</p></header>
+<header><h1>Emma Fit</h1><p>Your 97-day nutrition, strength, walking, sleep and water plan.</p></header>
 <main>
-<section id="today" class="tabs active"><div class="badge" id="countdownBadge">97 days</div>
+<section id="today" class="tabs active">
 <div class="card"><h2>Today</h2><div class="grid">
 <div class="metric">Calories<b><span id="calTotal">0</span>/<span id="calTarget">1200</span></b></div>
 <div class="metric">Protein<b><span id="proteinTotal">0</span> g</b></div>
@@ -67,13 +65,13 @@ nav button{background:#fff;color:var(--muted);font-size:11px;padding:8px 1px}nav
 <button class="danger" style="width:100%;margin-top:8px" onclick="resetShopping()">Reset ticks</button></div>
 </section>
 
-<section id="gym" class="tabs"><div class="card"><h2>Gym plan</h2><select id="daySelect" onchange="renderGym()"><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option></select><div id="gymPlan"></div></div><div class="card"><h2>Rest timer</h2><div id="restTimer" class="timer">01:00</div><div class="row"><button class="soft" onclick="startRest(60)">60 sec</button><button class="soft" onclick="startRest(90)">90 sec</button><button class="danger" onclick="stopRest()">Stop</button></div></div></section>
+<section id="gym" class="tabs"><div class="card"><h2>Gym plan</h2><select id="daySelect" onchange="renderGym()"><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option></select><div id="gymPlan"></div></div></section>
 
 <section id="progress" class="tabs">
 <div class="card"><h2>Weight and habits</h2><div class="row"><div><label>Weight (kg)</label><input id="weightInput" type="number" step=".1"></div><div><label>Date</label><input id="weightDate" type="date"></div></div><button class="primary" style="width:100%;margin-top:8px" onclick="saveWeight()">Save weigh-in</button></div>
 <div class="card"><h2>Recent weigh-ins</h2><div id="weightList"></div></div>
 <div class="card"><h2>Today’s habits</h2><p>Sleep: <b><span id="sleepTotal">0</span> hours</b></p><p>Workout: <b id="workoutStatus">Not logged</b></p></div>
-<div class="card"><h2>Backup your data</h2><p class="backup-note">Your entries are saved only in this browser. Export a backup before clearing browser data or changing phones.</p><div class="row"><button class="soft" onclick="exportBackup()">Export backup</button><label class="soft" style="text-align:center;padding:11px;border-radius:12px;font-weight:700;cursor:pointer">Import backup<input id="backupFile" type="file" accept=".json" style="display:none" onchange="importBackup(event)"></label></div></div></section>
+</section>
 </main>
 
 <nav>
@@ -115,14 +113,6 @@ weightList.innerHTML=state.weights.length?state.weights.slice(0,10).map(x=>`<div
 shoppingList.innerHTML=shop.map((x,i)=>`<label class="checkline"><input type="checkbox" ${state.shop[i]?"checked":""} onchange="toggleShop(${i})"><span>${x}</span></label>`).join("");
 }
 daySelect.value=todayName in plans?todayName:"Monday";weightDate.value=key;renderGym();render();
-
-let restHandle=null,restSeconds=60;
-function drawRest(){let m=Math.floor(restSeconds/60),ss=restSeconds%60;restTimer.textContent=String(m).padStart(2,"0")+":"+String(ss).padStart(2,"0")}
-function startRest(sec){stopRest();restSeconds=sec;drawRest();restHandle=setInterval(()=>{restSeconds--;drawRest();if(restSeconds<=0){stopRest();alert("Rest finished.")}},1000)}
-function stopRest(){if(restHandle)clearInterval(restHandle);restHandle=null}
-function exportBackup(){const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="emma-fit-backup.json";a.click();URL.revokeObjectURL(a.href)}
-function importBackup(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{state=JSON.parse(r.result);save()}catch(err){alert("That backup file could not be read.")}};r.readAsText(f)}
-const goalDate=new Date("2026-10-17T00:00:00");const daysLeft=Math.max(0,Math.ceil((goalDate-new Date())/86400000));document.getElementById("countdownBadge").textContent=daysLeft+" days to 17 October";
 if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js").catch(()=>{});
 </script>
 </body></html>

@@ -1,11 +1,11 @@
 {
-  "name": "Emma Fit",
+  "name": "Emma Fit 2.0",
   "short_name": "Emma Fit",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f5f1e8",
   "theme_color": "#216e55",
-  "description": "Emma's meal, workout, shopping, water, walking, sleep and progress app.",
+  "description": "Emma personalised nutrition, gym, shopping and progress app.",
   "icons": [
     {
       "src": "./icon.svg",

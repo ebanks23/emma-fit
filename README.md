@@ -1,18 +1,16 @@
-# Emma Fit — GitHub Pages upload
+# Emma Fit 2.0 update
 
-Upload every file in this folder to the root of a public GitHub repository.
+Upload these files to the root of the existing `emma-fit` repository and choose **Replace** when GitHub asks:
 
-Recommended repository name: `emma-fit`
+- index.html
+- manifest.json
+- sw.js
+- icon.svg
+- .nojekyll
 
-Then open:
-Settings → Pages → Build and deployment → Source: Deploy from a branch
-Branch: `main`
-Folder: `/(root)`
-Save.
+Keep GitHub Pages set to `main` and `/(root)`.
 
-Your site address will normally be:
-https://YOUR-GITHUB-USERNAME.github.io/emma-fit/
+After committing, wait 1–2 minutes and refresh:
+https://ebanks23.github.io/emma-fit/
 
-On iPhone, open the address in Safari, tap Share, then Add to Home Screen.
-
-Important: All logs are stored only in the browser on that device. Clearing Safari website data or changing devices will remove the saved data.
+Version 2 adds a countdown, rest timer, improved app title and data backup/import.
